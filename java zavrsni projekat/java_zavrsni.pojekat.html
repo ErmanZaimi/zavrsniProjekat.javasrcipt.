@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>java zavrsni projekat</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="survay.styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light home-navbar bg-secondary sticky-top">
+        <div class="container">
+            <button class="navbar-toggler bg-success" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>MENU
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page" href="#">IME PREZIME</a>
+                    </li>
+
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">PORTFOLIO</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">CONTACT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">SURVEY</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid " id="start-container">
+        <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+                <h4 class="text-dark p-3">Portfolio</h4>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+                <h2 class="text-dark">WONDERING IF TECH IS FOR YOU?</h2>
+            </div>
+            <div class="col-12 d-flex justify-content-center">
+                <p class="text-dark">Take this 3 min survey to find out.</p>
+            </div>
+            <div class="col-12 text-center">
+                <button type="button" class="btn btn-dark text-white btn-block" id="startButton">START</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid question-container " id="question1">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <div class="question-header">
+                    <div class="question-number">Question 1 of 5</div>
+                </div>
+                <div class="question-text">
+                    <p class="question">Before we dive in, what's your name?</p>
+                </div>
+                <div class="col-12 text-center">
+                    <input type="text" id="nameInput" class="name-input" placeholder="Type your answer here...">
+                    <br>
+                    <button type="button" class="btn btn-dark" id="nextButton" onclick="showNextQuestion()" >Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid question-container " id="question2" style="display: none;">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <div class="question-header">
+                    <div class="question-number">Question 2 of 5</div>
+                </div>
+                <div class="question-text">
+                    <p class="question">Where are you in your career?</p>
+                </div>
+                <div class="col-12 text-center">
+                    <input type="radio" name="language" value="prvoPitanje" id="prvoPitanje"> <label for="prvoPitanje">I know what career i whant, and i need to learn some skills</label>
+                    <br>
+                    <input type="radio" name="language" value="drugoPitanje" id="drugoPitanje"> <label for="drugoPitanje">I like my carrer -- or at least, I dont HATE it -- but I keep wondering if theres someting more out there</label>
+                    <br>
+                    <input type="radio" name="language" value="trecePitanje" id="trecePitanje"> <label for="trecePitanje">I took a break from my career, and now Im ready to get back into the workforce</label>
+                    <br>
+                    <input type="radio" name="language" value="cetvrtoPitanje" id="cetvrtoPitanje"> <label for="cetvrtoPitanje">I want to make a carrer change, but im also super busy  </label>
+                    <br>
+                    <input type="radio" name="language" value="petoPitanje" id="petoPitanje"> <label for="petoPitanje">Im just starting out</label>
+                    <br>
+                    <input type="radio" name="language" value="sestoPitanje" id="sestoPitanje"> <label for="sestoPitanje">Im burnt out from going into an office every dayand ready to make my own hours</label>
+                    <br>
+                    <input type="radio" name="language" value="Other" id="otherRadio"> <label for="otherRadio">Other</label>
+                    <br>
+                    <div id="otherAnswerContainer" style="display: none;">
+                        <input type="text" id="otherAnswerInput" class="name-input" placeholder="Type your answer here...">
+                    </div>
+                    <br>
+                    <button type="button" class="btn btn-dark" id="nextButton2" onclick="showNextQuestion()">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid question-container " id="question3" style="display: none;">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <div class="question-header">
+                    <div class="question-number">Question 3 of 5</div>
+                </div>
+                <div class="question-text">
+                    <p class="question">What is your biggest concern about learning tech skills?</p>
+                </div>
+                <div class="col-12 text-center">
+                    <input type="radio" name="language" value="prvoPitanje" id="prvoPitanje"> <label for="prvoPitanje">Even if i learned the skills, with my weird resume, why would they hire me over a computer science grad?</label>
+                    <br>
+                    <input type="radio" name="language" value="drugoPitanje" id="drugoPitanje"> <label for="drugoPitanje">I dont have time to learn new skills.</label>
+                    <br>
+                    <input type="radio" name="language" value="trecePitanje" id="trecePitanje"> <label for="trecePitanje">I dream of a remote job --but to those jobs REALLY exist for, you know, REAL people like me? </label>
+                    <br>
+                    <input type="radio" name="language" value="cetvrtoPitanje" id="cetvrtoPitanje"> <label for="cetvrtoPitanje">Its too late in my career/life to make this big of a change.   </label>
+                    <br>
+                    <input type="radio" name="language" value="petoPitanje" id="petoPitanje"> <label for="petoPitanje">Learning tech skill is expensive and Im on a tight budget-- im not sure its worth it.</label>
+                    <br>
+                    <input type="radio" name="language" value="sestoPitanje" id="sestoPitanje"> <label for="sestoPitanje">My career is okay and learning tech skills is expensive-- why shoul I rock the boat?</label>
+                    <br>
+                    <br>
+                    <button type="button" class="btn btn-dark" id="nextButton2" onclick="showNextQuestion()">Next</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid question-container " id="question4" style="display: none;">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <div class="question-header">
+                    <div class="question-number">Question 4 of 5</div>
+                </div>
+                <div class="question-text">
+                    <p class="question">Picture the prefect job place for you. <br>What do you see?</p>
+                </div>
+                <div class="col-12 text-center">
+                    <input type="radio" name="language" value="prvoPitanje" id="prvoPitanje"> <label for="prvoPitanje">A bustling agency where Im surrounded by incredible creative talent. </label>
+                    <br>
+                    <input type="radio" name="language" value="drugoPitanje" id="drugoPitanje"> <label for="drugoPitanje">A collaborative environment where Im LEADING the team. </label>
+                    <br>
+                    <input type="radio" name="language" value="trecePitanje" id="trecePitanje"> <label for="trecePitanje">A collaborative einvironment where Im a full-time member of a team working shoulder-to-shoulder with fun, experienced team members. </label>
+                    <br>
+                    <input type="radio" name="language" value="cetvrtoPitanje" id="cetvrtoPitanje"> <label for="cetvrtoPitanje">A coworking spot! I work with my team sometimes in-person and then have the freedom to finish my work around my busy schedule.  </label>
+                    <br>
+                    <input type="radio" name="language" value="petoPitanje" id="petoPitanje"> <label for="petoPitanje">A video conference with coworkers on my sreen... and the beach behind it.</label>
+                    <br>
+                    <input type="radio" name="language" value="sestoPitanje" id="sestoPitanje"> <label for="sestoPitanje">Work at home in the morning, with time for kids soccer practice in the afternoon.</label>
+                    <br>
+                    <br>
+                    <button type="button" class="btn btn-dark" id="nextButton2" onclick="showNextQuestion()">Next</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid question-container " id="question5" style="display: none;">
+        <div class="row justify-content-center">
+          <div class="col-md-12 text-center">
+            <div class="question-header">
+              <div class="question-number">Question 5 of 5</div>
+            </div>
+            <div class="question-text">
+              <p class="question">Just one more thing! How much do you like this survey?<br>1-5</p>
+            </div>
+            <div class="col-12 text-center">
+              <input type="range" id="ratingInput" min="1" max="5">
+              <br>
+              <br>
+              <button type="button" class="btn btn-dark" id="submitButton" onclick="submitQuestionnaire()">Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="resultContainer" class="container-fluid question-container" style="display: none;">
+  <div class="row justify-content-center">
+    <div class="col-md-12 text-center">
+      <div class="question-header">
+        <h1>Hi Petar</h1>
+        <h3>Thank you for your time!</h3>
+      </div>
+      <div class="col-12 text-center">
+        <div id="resultMessage"></div>
+        <div id="resultEmoticon"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+
+    <script src="survay.js"></script>
+</body>
+
+</html>
